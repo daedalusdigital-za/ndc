@@ -8,7 +8,7 @@ import { ClientComponent } from './client/client.component';
 import { HcworkerComponent } from './hcworker/hcworker.component';
 import { HosadminComponent } from './hosadmin/hosadmin.component';
 import { SuperadminComponent } from './superadmin/superadmin.component';
-import {LoginModule} from './login/login.module'
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import {LoginModule} from './login/login.module'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LoginModule
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
