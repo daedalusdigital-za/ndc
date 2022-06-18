@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { ChildComponent } from './child/child.component';
+import { MasterService } from './service/master.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,9 @@ import { ChildComponent } from './child/child.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(private service:MasterService){
+
+  }
 @ViewChild(ChildComponent) viewdata !:ChildComponent
 title = 'Parent Component';
 inputname='';
@@ -15,10 +19,14 @@ inputobj={"name":"","mark":""};
 response:any;
 TransferData(name:any,mark:any)
 {
-this.inputname=name;
-this.inputmark=mark
+
 this.inputobj={"name":name,"mark":mark};
-this.response= this.viewdata.updatelist(this.inputobj);
+this.service.SaveData(this.inputobj);
+
+//this.response= this.viewdata.updatelist(this.inputobj);
+//this.inputname=name;
+//this.inputmark=mark
+
 }
  
  updateTitle(title:any){

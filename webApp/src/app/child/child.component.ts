@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MasterService } from '../service/master.service';
 
 @Component({
   selector: 'app-child',
@@ -13,9 +14,14 @@ export class ChildComponent implements OnInit {
 
   @Output() dataupdateevent = new EventEmitter<string>();
 
-  listarray=[{"name":"welcome","mark":"75"}]
+  listarray=[{"name":"","mark":""}]
 
-  constructor() { }
+  constructor(private service:MasterService) {
+this.listarray=this.service.GetData() 
+
+   }
+
+
    updatelist(obj:any){
     this.listarray.push(obj);
     return obj.name + " is added";
