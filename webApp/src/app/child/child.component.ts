@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -11,13 +11,16 @@ export class ChildComponent implements OnInit {
   @Input() markdata:any;
   @Input() objdata:any;
 
+  @Output() dataupdateevent = new EventEmitter<string>();
+
   listarray=[{"name":"welcome","mark":"75"}]
 
   constructor() { }
    updatelist(obj:any){
     this.listarray.push(obj);
+    return obj.name + " is added";
    }
   ngOnInit(): void {
   }
-
+ 
 }

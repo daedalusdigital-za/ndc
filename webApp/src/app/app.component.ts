@@ -12,15 +12,18 @@ title = 'Parent Component';
 inputname='';
 inputmark='';
 inputobj={"name":"","mark":""};
+response:any;
 TransferData(name:any,mark:any)
 {
 this.inputname=name;
 this.inputmark=mark
 this.inputobj={"name":name,"mark":mark};
-this.viewdata.updatelist(this.inputobj);
+this.response= this.viewdata.updatelist(this.inputobj);
 }
  
- 
+ updateTitle(title:any){
+this.title=title;
+ }
 
 }
  
