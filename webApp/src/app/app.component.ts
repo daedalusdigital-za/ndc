@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'webApp';
+  title = 'Welcome To NCD Software --';
+  length=100;
+  b=50;
 }
+ 
