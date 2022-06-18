@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { ChildComponent } from './child/child.component';
 
 @Component({
   selector: 'app-root',
@@ -6,8 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Welcome To NCD Software --';
-  length=100;
-  b=50;
+@ViewChild(ChildComponent) viewdata !:ChildComponent
+title = 'Parent Component';
+inputname='';
+inputmark='';
+inputobj={"name":"","mark":""};
+TransferData(name:any,mark:any)
+{
+this.inputname=name;
+this.inputmark=mark
+this.inputobj={"name":name,"mark":mark};
+this.viewdata.updatelist(this.inputobj);
+}
+ 
+ 
+
 }
  

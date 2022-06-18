@@ -9,6 +9,7 @@ import { HcworkerComponent } from './hcworker/hcworker.component';
 import { HosadminComponent } from './hosadmin/hosadmin.component';
 import { SuperadminComponent } from './superadmin/superadmin.component';
 import { AuthModule } from './auth/auth.module';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AuthModule } from './auth/auth.module';
     ClientComponent,
     HcworkerComponent,
     HosadminComponent,
-    SuperadminComponent
+    SuperadminComponent,
+    ChildComponent
   ], 
   imports: [
     BrowserModule,
