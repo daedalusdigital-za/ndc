@@ -9,6 +9,7 @@ import { MasterService } from './service/master.service';
 })
 export class AppComponent {
   constructor(private service:MasterService){
+    sessionStorage.setItem("name1","welcomeking");
 
   }
 @ViewChild(ChildComponent) viewdata !:ChildComponent

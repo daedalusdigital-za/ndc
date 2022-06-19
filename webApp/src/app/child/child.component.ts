@@ -11,6 +11,7 @@ export class ChildComponent implements OnInit {
   @Input() namedata:any;
   @Input() markdata:any;
   @Input() objdata:any;
+  Channelname:any;
 
   @Output() dataupdateevent = new EventEmitter<string>();
 
@@ -27,6 +28,7 @@ this.listarray=this.service.GetData()
     return obj.name + " is added";
    }
   ngOnInit(): void {
+    this.Channelname=sessionStorage.getItem("name1")!=null?sessionStorage.getItem("name1"):"";
   }
  
 }
